@@ -4,3 +4,5 @@ vue create []
 npm i
 npm install
 npm run serve
+
+npm install typescript --save-dev
