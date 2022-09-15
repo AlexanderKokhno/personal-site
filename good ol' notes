@@ -1,0 +1,6 @@
+npm install -g @vue/cli
+############# running vue 2
+vue create []
+npm i
+npm install
+npm run serve
