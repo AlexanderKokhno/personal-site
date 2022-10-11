@@ -1,4 +1,4 @@
-# alexk-site
+# personal-site
 
 ## Project setup
 ```
