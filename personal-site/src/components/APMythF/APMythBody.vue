@@ -1,8 +1,9 @@
 
 <template>
   <div class="headerComp">
-    <div class="headerRow1">
+    <div class="introRow">
       <h1 id='headerTitle'>{{ title }}</h1>
+      <img alt="Vue logo" src="@/assets/images/Achilles.png"/>
       <!-- <form class="headerDropDown">
         <select  onchange="showDropInfo()">
             <option ><router-link to="/">Home</router-link></option>
@@ -13,9 +14,11 @@
         </select>
       </form> -->
     </div>
-    <div class='headerRow2'>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/APMyth">AP Myth Journal</router-link>
+    <div class='posts'>
+      <P>hfeufuuebfubeub</P>
+      <div v-for='allEntrie in allEntries' :key='allEntrie'>
+        <APMythPosts v-bind:postEntrie="allEntrie"/>
+      </div>
     </div>
 
     <!-- <img alt="Vue logo" src="../assets/images/Achilles.png"/> -->
@@ -23,34 +26,50 @@
 </template>
 /* eslint-disable */
 <script>
+import APMythPosts from '@/components/APMythF/APMythPosts.vue'
 export default {
-  name: 'HeadComp',
+
+  name: 'APMythBody',
+  components: {
+    APMythPosts
+  },
   props: {
     title: String
+  },
+  data () {
+    return {
+      allEntries: [
+        {
+          date: 'lorem1',
+          bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis amet molestias dolore optio odit officiis consequatur maiores, enim quibusdam facere dicta maxime repellendus architecto fuga voluptates. Eius, nesciunt pariatur?'
+        },
+        {
+          date: 'lorem2',
+          bodyText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat perspiciatis amet molestias dolore optio odit officiis consequatur maiores, enim quibusdam facere dicta maxime repellendus architecto fuga voluptates. Eius, nesciunt pariatur?'
+        }
+      ]
+    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import '../assets/style.css';
+@import '@/assets/style.css';
 .headerComp {
-  background-color: #EBEBF2;
   display: flex;
   flex-direction: column;
-  position: sticky;
   width: 100%;
   height: auto;
 }
 
-.headerRow1 {
+.introRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 1vh;
 }
-.headerRow2 {
-  flex-direction: row;
+.Posts {
   width: 100%;
   justify-content: center;
   padding: 1vh;
